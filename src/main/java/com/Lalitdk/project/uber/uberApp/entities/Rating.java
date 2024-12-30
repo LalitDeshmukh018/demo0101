@@ -13,8 +13,8 @@ import lombok.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Table (indexes ={
-    @Index (name = "idx_rating_rider" ,columnList = "riderId"),
-    @Index (name = "idx_rating_driver" , columnList = "driver Id")
+    @Index (name = "idx_rating_rider" ,columnList = "rider_Id"),
+    @Index (name = "idx_rating_driver" , columnList = "driver_Id")
 })
 public class Rating {
     

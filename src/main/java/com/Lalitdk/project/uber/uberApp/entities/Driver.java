@@ -1,12 +1,7 @@
 package com.Lalitdk.project.uber.uberApp.entities;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 import org.locationtech.jts.geom.Point;
 
 @Entity
@@ -16,11 +11,9 @@ import org.locationtech.jts.geom.Point;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Table (indexes = {
-    @Index(name ="idx_driver_vechicle_id" , columnList = "vechicleId")
+@Table(name = "driver", indexes = {
+        @Index(name = "idx_driver_vehicle_id", columnList = "vehicle_id")  // Fixed typo
 })
-
-
 public class Driver {
 
     @Id
@@ -35,6 +28,7 @@ public class Driver {
 
     private Boolean available;
 
+    @Column(name = "vehicle_id")  // Map vehicleId to vehicle_id in DB
     private String vehicleId;
 
     @Column(columnDefinition = "Geometry(Point, 4326)")

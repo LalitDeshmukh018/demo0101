@@ -1,5 +1,6 @@
 package com.Lalitdk.project.uber.uberApp.services.impl;
 
+import com.Lalitdk.project.uber.uberApp.entities.User;
 import com.Lalitdk.project.uber.uberApp.repositories.DriverRepository;
 import com.Lalitdk.project.uber.uberApp.dto.DriverDto;
 import com.Lalitdk.project.uber.uberApp.dto.RideDto;
@@ -19,6 +20,7 @@ import lombok.RequiredArgsConstructor;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.data.domain.PageRequest;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -186,8 +188,9 @@ public class DriverServiceImpl implements DriverService {
 
     @Override
     public Driver getCurrentDriver() {
-        return driverRepository.findById(2L).orElseThrow(() -> new ResourceNotFoundException("Driver not found with " +
-                "id "+2));
+        User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        return driverRepository.findByUser(user).orElseThrow(() ->
+                new ResourceNotFoundException("Driver not associate with user with id" + user.getId()));
     }
 
 

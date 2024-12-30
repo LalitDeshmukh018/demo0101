@@ -17,9 +17,9 @@ import java.time.LocalDateTime;
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
-@Table (indexes = {
-    @Index(name ="idx_ride_rider" , columnList = "ride_id"),
-    @Index (name = "idex_driver" ,columnList = "driver_id")
+@Table(indexes = {
+        @Index(name = "idx_ride_rider", columnList = "id"),
+        @Index(name = "idx_driver", columnList = "driver_id")
 })
 public class Ride {
 
@@ -53,5 +53,4 @@ public class Ride {
     private Double fare;
     private LocalDateTime startedAt;
     private LocalDateTime endedAt;
-
 }

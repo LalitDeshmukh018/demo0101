@@ -64,7 +64,7 @@ public class DriverServiceImpl implements DriverService {
     }
 
 
-   // for the camcel purpose we aes upose dto do not only that
+   // for the cancel purpose we aes upose dto do not only that
     // for cancellation the ride only driver can cancel the ride
     // including various logic ie can cancel only when the ride has not been started
     // if ride get started then we cant cancel it we can just end it 

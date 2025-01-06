@@ -14,7 +14,6 @@ import com.Lalitdk.project.uber.uberApp.services.AuthService;
 import com.Lalitdk.project.uber.uberApp.services.DriverService;
 import com.Lalitdk.project.uber.uberApp.services.RiderService;
 import com.Lalitdk.project.uber.uberApp.services.WalletService;
-import io.jsonwebtoken.security.Password;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.security.authentication.AuthenticationManager;
